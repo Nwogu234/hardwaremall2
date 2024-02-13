@@ -21,7 +21,7 @@ const findProducts = async (req, res) => {
 // fetch product details using slug
 const findProductWithID = async (req, res) => {
     try{ 
-        let slug = req.params.slug
+        let slug = req.params.id
         
         let response = await axios.post('https://admin-kbni.onrender.com/users/productsslug', {
             id: slug
