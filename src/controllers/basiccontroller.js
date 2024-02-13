@@ -19,12 +19,12 @@ const findProducts = async (req, res) => {
 
 
 // fetch product details using slug
-const findProductWithSlug = async (req, res) => {
+const findProductWithID = async (req, res) => {
     try{ 
         let slug = req.params.slug
         
         let response = await axios.post('https://admin-kbni.onrender.com/users/productsslug', {
-            slug: slug
+            id: slug
         })
         if(response.data.data !== null){
             res.json({ productDetails: response.data.data })
@@ -183,7 +183,7 @@ module.exports = {
     findTopVendors,
     findVideo,
     findProducts,
-    findProductWithSlug,
+    findProductWithID,
     findVendorWithSlug,
     upMessageLead,
     upCallLead,
